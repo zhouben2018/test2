@@ -5,7 +5,32 @@ package com.zben.test;
  *
  */
 public class App {
+
     public static void main( String[] args ) {
-        System.out.println( "Hello World!" );
+        staticFunction();
     }
+
+    static App app = new App();
+
+    static {
+        System.out.println("1");
+    }
+
+    {
+        System.out.println("2");
+    }
+
+    App() {
+        System.out.println("3");
+        System.out.println("a=" + a + ", b=" + b);
+    }
+
+    private static void staticFunction() {
+
+        System.out.println("4");
+    }
+
+    int a = 1;
+
+    static int b = 3;
 }
